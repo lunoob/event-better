@@ -4,10 +4,10 @@
 * @Instruduction: event plus
 */
 
-import { IEvent } from './types/event'
 import { isPlainObject } from 'lodash-es'
+import { IEvent } from './types/event'
 
-class IEventManager {
+class IEventManager implements IEventManager {
     private channel: Record<any, Map<any, null | (() => void)>>
     private coverChannel: Record<any, null | (() => void)>
     
