@@ -28,7 +28,7 @@ class IEventManager<T extends string> {
         }
 
         const curMap: null | Map<any, any> = this.channel[type]
-        let fn: any = null
+        let fn: any = config
         let key: any = curMap != null ? curMap.size + 1 : 1
 
         if (isPlainObject(config)) {
