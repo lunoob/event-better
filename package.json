@@ -1,20 +1,30 @@
 {
   "name": "event-plus",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "event handle plus version",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "event",
+    "plus"
+  ],
+  "author": "luoob",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lunoob/event-plus"
+  },
   "dependencies": {
-    "ahooks": "^3.3.8",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.6"
+    "@types/lodash-es": "^4.17.6",
+    "typescript": "^4.6.3"
   }
 }

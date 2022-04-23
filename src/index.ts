@@ -7,7 +7,7 @@
 import { isPlainObject } from 'lodash-es'
 import { IEvent } from './types/event'
 
-class IEventManager implements IEventManager {
+class IEventManager<T extends string> {
     private channel: Record<any, Map<any, null | (() => void)>>
     private coverChannel: Record<any, null | (() => void)>
     
@@ -22,7 +22,7 @@ class IEventManager implements IEventManager {
      * @param {(() => void) | IEvent.OnConfig} config
      * @returns {any}
      */
-    on(type: IEvent.EventType, config: (() => void) | IEvent.OnConfig) {
+    on(type: T, config: (() => void) | IEvent.OnConfig) {
         if (config == null) {
             return
         }
@@ -46,30 +46,21 @@ class IEventManager implements IEventManager {
 
     /**
      * listen event
-     * @param {IEvent.EventType} type
+     * @param {T} type
      * @param {Function} fn
      * @returns {any}
      */
-    cover(type: IEvent.EventType, fn: () => void) {
+    cover(type: T, fn: () => void) {
         this.coverChannel[type] = fn
     }
 
     /**
-     * remove listen event
-     * @param {IEvent.EventType} type
-     * @returns {any}
-     */
-    removeCover(type: IEvent.EventType) {
-        this.coverChannel[type] = null
-    }
-
-    /**
      * trigger event
-     * @param {IEvent} type
+     * @param {T} type
      * @param {any} payload
      * @returns {any}
      */
-    emit(type: IEvent.EventType, payload?: any) {
+    emit(type: T, payload?: any) {
         const fnMap = this.channel[type] 
         let fnList = fnMap ? Array.from(fnMap.values()) : []
         // @ts-ignore
@@ -80,11 +71,11 @@ class IEventManager implements IEventManager {
 
     /**
      * remove event listener
-     * @param {IEvent} type
+     * @param {T} type
      * @param {(() => void) | IEvent.OnConfig} config
      * @returns {any}
      */
-    remove(type: IEvent.EventType, config: (() => void) | IEvent.OnConfig) {
+    remove(type: T, config: (() => void) | IEvent.OnConfig) {
         if (config == null) {
             return
         }
@@ -121,6 +112,24 @@ class IEventManager implements IEventManager {
             curMap.delete(key)
         }
     }
+
+    /**
+     * remove listen event
+     * @param {T} type
+     * @returns {any}
+     */
+    removeCover(type: T) {
+        this.coverChannel[type] = null
+    }
+
+    /**
+     * 移除所有监听器
+     * @param {T} type
+     * @returns {any}
+     */
+    removeAll(type: T) {
+        this.channel[type] = new Map()
+    }
 }
 
-export default new IEventManager()
+export default IEventManager
