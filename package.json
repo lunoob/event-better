@@ -1,5 +1,5 @@
 {
-  "name": "event-plus",
+  "name": "i-event.js",
   "version": "0.0.1",
   "description": "event handle plus version",
   "main": "dist/index.js",
