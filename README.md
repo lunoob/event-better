@@ -1,4 +1,4 @@
-# Event Plus
+# Event Better
 
 自定义事件增强版
 
