@@ -5,7 +5,7 @@
 	"main": "dist/lib/index.js",
 	"types": "dist/types/index.d.ts",
 	"scripts": {
-		"build": "tsc-esm",
+		"build": "tsc-esm -p tsconfig.build.json",
 		"test": "jest",
 		"prepublishOnly": "node script/prepublish.js"
 	},
