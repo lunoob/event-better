@@ -10,8 +10,8 @@ import { createExpectType } from './helper'
 export class EventBetter<T extends string> {
     private channel: Record<string, Map<IEvent.Key, null | IEvent.Listener>>
     private coverChannel: Record<string, null | IEvent.Listener>
-    
-    constructor() {
+
+    constructor () {
         this.channel = {}
         this.coverChannel = {}
     }
@@ -22,7 +22,7 @@ export class EventBetter<T extends string> {
      * @param {IEvent.Listener | IEvent.OnConfig} config
      * @returns {void}
      */
-    on(type: T, config: IEvent.Listener | IEvent.OnConfig) {
+    on (type: T, config: IEvent.Listener | IEvent.OnConfig) {
         if (config == null) {
             return
         }
@@ -40,7 +40,7 @@ export class EventBetter<T extends string> {
         if (curMap) {
             curMap.set(key, fn)
         } else {
-            const map = new Map([ [key, fn] ])
+            const map = new Map([[key, fn]])
             this.channel[type] = map
         }
     }
@@ -51,7 +51,7 @@ export class EventBetter<T extends string> {
      * @param {IEvent.Listener} fn
      * @returns {void}
      */
-    cover(type: T, fn: IEvent.Listener) {
+    cover (type: T, fn: IEvent.Listener) {
         this.coverChannel[type] = fn
     }
 
@@ -61,9 +61,9 @@ export class EventBetter<T extends string> {
      * @param {any} payload
      * @returns {void}
      */
-    emit(type: T, payload?: any) {
-        const fnMap = this.channel[type] 
-        let fnList = fnMap ? Array.from(fnMap.values()) : []
+    emit (type: T, payload?: any) {
+        const fnMap = this.channel[type]
+        const fnList = fnMap ? Array.from(fnMap.values()) : []
         // @ts-ignore
         fnList.filter(Boolean).forEach(fn => isFunction(fn) && fn(payload))
 
@@ -71,7 +71,6 @@ export class EventBetter<T extends string> {
         coverFn && isFunction(coverFn) && coverFn()
     }
 
-    
     /**
      * tigger event listener by key
      * Only when the key is equal can it be executed
@@ -79,7 +78,7 @@ export class EventBetter<T extends string> {
      * @param {IEvent.EmitByKeyOption} option
      * @returns {void}
      */
-    emitByKey(type: T, option: IEvent.EmitByKeyOption) {
+    emitByKey (type: T, option: IEvent.EmitByKeyOption) {
         if (!isPlainObject(option)) {
             throw new TypeError(createExpectType('object', option))
         }
@@ -97,8 +96,7 @@ export class EventBetter<T extends string> {
      * @param {IEvent.Listener | IEvent.RemoveConfig} config
      * @returns {void}
      */
-    remove(type: T, config: IEvent.Listener | IEvent.RemoveConfig) {
-        debugger
+    remove (type: T, config: IEvent.Listener | IEvent.RemoveConfig) {
         if (config == null) {
             return
         }
@@ -145,7 +143,7 @@ export class EventBetter<T extends string> {
      * @param {T} type
      * @returns {void}
      */
-    removeCover(type: T) {
+    removeCover (type: T) {
         this.coverChannel[type] = null
     }
 
@@ -154,7 +152,7 @@ export class EventBetter<T extends string> {
      * @param {T} type
      * @returns {void}
      */
-    removeAll(type: T) {
+    removeAll (type: T) {
         this.channel[type] = new Map()
     }
 }
