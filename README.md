@@ -42,9 +42,17 @@ event.remove('hello', { key: 'key' })
 
 
 
-### emit(name)
+### emit(name, payload?)
 
 触发事件, 按注册的顺序执行回调函数
+
+
+
+### emitByKey(name, { key, payload? })
+
+<span style="background:red;border-radius:4px;color:#fff;padding:2px 4px;">0.0.5 版本新增</span>
+
+触发事件，只有与传入的 key 值相绑定的回调函数才会被执行
 
 
 

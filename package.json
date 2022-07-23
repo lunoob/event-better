@@ -1,32 +1,49 @@
 {
-  "name": "event-better",
-  "version": "0.0.4",
-  "description": "event handle plus version",
-  "main": "dist/lib/index.js",
-  "types": "dist/types/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "upload": "npm publish --access=public",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "event",
-    "plus"
-  ],
-  "author": "luoob",
-  "license": "MIT",
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lunoob/event-plus"
-  },
-  "dependencies": {
-    "lodash-es": "^4.17.21"
-  },
-  "devDependencies": {
-    "@types/lodash-es": "^4.17.6"
-  }
+	"name": "event-better",
+	"version": "0.0.5",
+	"description": "event handle plus version",
+	"main": "dist/lib/index.js",
+	"types": "dist/types/index.d.ts",
+	"scripts": {
+		"build": "tsc-esm",
+		"upload": "npm publish",
+		"test": "jest"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"event",
+		"plus"
+	],
+	"author": "luoob",
+	"license": "MIT",
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lunoob/event-plus"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/core": "^7.18.9",
+		"@babel/preset-env": "^7.18.9",
+		"@babel/preset-typescript": "^7.18.6",
+		"@digitak/tsc-esm": "^3.1.3",
+		"@types/jest": "^28.1.6",
+		"@types/lodash": "^4.14.182",
+		"@typescript-eslint/eslint-plugin": "^5.30.7",
+		"@typescript-eslint/parser": "^5.30.7",
+		"babel-jest": "^28.1.3",
+		"eslint": "^8.0.1",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.25.2",
+		"eslint-plugin-n": "^15.0.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"jest": "^28.1.3",
+		"lodash": "^4.17.21",
+		"typescript": "^4.7.4"
+	}
 }
