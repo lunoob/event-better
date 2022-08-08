@@ -1,19 +1,6 @@
-import { EventBetter } from '../src'
+import { EventBetter } from '../esm/index.js'
 
-type EventType = 
-    | 'test01'
-    | 'test02'
-    | 'test03'
-    | 'test04'
-    | 'test05'
-    | 'test06'
-    | 'test07'
-    | 'test08'
-    | 'test09'
-    | 'test10'
-    | 'test11'
-
-let eBetter = new EventBetter<EventType>()
+const eBetter = new EventBetter()
 
 test('on 类型监听事件', () => {
     const fn = jest.fn()
@@ -31,7 +18,7 @@ test('带 key 的事件监听', () => {
 
     eBetter.on('test02', {
         key: 'test02',
-        callback() {
+        callback () {
             fn()
             expect(fn).toHaveBeenCalled()
         }
@@ -70,7 +57,7 @@ test('remove 对应的监听事件', () => {
     const fn = jest.fn()
 
     eBetter.on('test05', fn)
-    
+
     eBetter.remove('test05', fn)
 
     eBetter.emit('test05')
@@ -88,7 +75,7 @@ test('removeAll 移除所有的监听事件', () => {
     eBetter.on('test07', fn)
     eBetter.on('test07', fn)
     eBetter.on('test07', fn)
-    
+
     eBetter.removeAll('test07')
 
     eBetter.emit('test07')
@@ -117,7 +104,7 @@ test('removeByKey 移除带 key 的监听事件', () => {
     eBetter.emit('test10')
 })
 
-test.only('emitByKey 触发特定的事件', () => {
+test('emitByKey 触发特定的事件', () => {
     const fn01 = jest.fn()
     const fn02 = jest.fn()
     const key = 'emitByKey'

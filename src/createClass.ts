@@ -3,9 +3,7 @@
 * @author Luoob
 */
 
-import { isFunction, isPlainObject } from 'lodash'
-import { IEvent } from './types/event'
-import { createExpectType } from './helper'
+import { createExpectType, isFunction, isPlainObject } from './helper/index.js'
 
 export class EventBetter<T extends string> {
     private channel: Record<string, Map<IEvent.Key, null | IEvent.Listener>>

@@ -3,7 +3,7 @@
 * @author Luoob
 */
 
-export type DataType = 
+export type DataType =
     | 'bigint'
     | 'boolean'
     | 'function'
@@ -13,6 +13,6 @@ export type DataType =
     | 'symbol'
     | 'undefined'
 
-export function createExpectType(expect: DataType, current: any) {
+export function createExpectType (expect: DataType, current: any) {
     return `expect a ${expect}, but got ${typeof current}`
 }

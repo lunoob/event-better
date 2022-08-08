@@ -1,5 +1,5 @@
-node_modules/
-dist/
+*/**/*.d.ts
+test/
 esm/
 evb.js
 evb.min.js

@@ -7,7 +7,7 @@
 ## 使用
 
 ```typescript
-import IEvent from 'IEvent'
+import { IEvent } from 'IEvent'
 
 const event = new IEvent<'hello' | 'custom'>()
 

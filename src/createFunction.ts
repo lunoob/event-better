@@ -3,8 +3,8 @@
 * @author Luoob
 */
 
-import { EventBetter } from '.'
+import { EventBetter } from './createClass.js'
 
-export function createEventBetter<T extends string>() {
+export function createEventBetter<T extends string> () {
     return new EventBetter<T>()
 }
