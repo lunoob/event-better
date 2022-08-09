@@ -3,7 +3,8 @@
 * @author Luoob
 */
 
-import { createExpectType, isFunction, isPlainObject } from './helper/index.js'
+import { createExpectType, isFunction, isPlainObject } from './helper'
+import { IEvent } from './types/iEvent'
 
 export class EventBetter<T extends string> {
     private channel: Record<string, Map<IEvent.Key, null | IEvent.Listener>>

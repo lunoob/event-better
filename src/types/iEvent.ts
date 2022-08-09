@@ -1,4 +1,4 @@
-declare namespace IEvent {
+export namespace IEvent {
     export type Key = string | number | Symbol
 
     export type Listener = {

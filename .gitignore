@@ -1,5 +1,7 @@
 node_modules/
 dist/
 esm/
+./types/
 evb.js
 evb.min.js
+index.d.ts

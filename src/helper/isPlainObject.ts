@@ -1,4 +1,4 @@
-import { isObjectLike } from './isObjectLike.js'
+import { isObjectLike } from './isObjectLike'
 import { getTag } from './getTag'
 
 /**

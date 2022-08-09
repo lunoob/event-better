@@ -3,7 +3,7 @@
 * @author Luoob
 */
 
-import { EventBetter } from './createClass.js'
+import { EventBetter } from './createClass'
 
 export function createEventBetter<T extends string> () {
     return new EventBetter<T>()

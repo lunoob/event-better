@@ -1,4 +1,4 @@
-import { EventBetter } from '../esm/index.js'
+import { EventBetter } from '../src'
 
 const eBetter = new EventBetter()
 

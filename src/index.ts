@@ -1,2 +1,2 @@
-export * from './createClass.js'
-export * from './createFunction.js'
+export * from './createClass'
+export * from './createFunction'
