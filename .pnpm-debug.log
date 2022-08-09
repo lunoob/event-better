@@ -1,0 +1,22 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ELIFECYCLE",
+    "errno": "ENOENT",
+    "syscall": "spawn",
+    "file": "sh",
+    "pkgid": "event-better@0.0.9",
+    "stage": "clean",
+    "script": "rimraf esm evb.js evb.min.js types index.d.ts",
+    "pkgname": "event-better",
+    "err": {
+      "name": "pnpm",
+      "message": "event-better@0.0.9 clean: `rimraf esm evb.js evb.min.js types index.d.ts`\nspawn ENOENT",
+      "code": "ELIFECYCLE",
+      "stack": "pnpm: event-better@0.0.9 clean: `rimraf esm evb.js evb.min.js types index.d.ts`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/Users/luoob/.nvm/versions/node/v16.13.2/lib/node_modules/pnpm/dist/pnpm.cjs:93580:22)\n    at ChildProcess.emit (node:events:390:28)\n    at maybeClose (node:internal/child_process:1064:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:301:5)"
+    }
+  },
+  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
+}

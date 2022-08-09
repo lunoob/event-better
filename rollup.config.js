@@ -22,7 +22,7 @@ const config = defineConfig([
         ]
     },
     {
-        input: 'types/index.d.ts',
+        input: 'esm/index.d.ts',
         output: {
             file: 'index.d.ts',
             format: 'es'
