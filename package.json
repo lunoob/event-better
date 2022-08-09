@@ -1,6 +1,6 @@
 {
 	"name": "event-better",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "event handle plus version",
 	"main": "evb.js",
 	"module": "esm/index.js",
@@ -11,7 +11,7 @@
 		"build": "rollup -c",
 		"generate": "npm run clean && npm run compile && npm run build",
 		"test": "jest",
-		"clean": "rimraf esm evb.js evb.min.js types index.d.ts",
+		"clean": "rimraf esm evb.js evb.min.js index.d.ts",
 		"prepublishOnly": "npm run generate"
 	},
 	"publishConfig": {
@@ -22,7 +22,6 @@
 		"evb.min.js",
 		"evb.js",
 		"index.d.ts",
-		"types",
 		"README.md"
 	],
 	"keywords": [
